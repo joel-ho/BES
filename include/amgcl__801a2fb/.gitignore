@@ -1,0 +1,12 @@
+build*
+.*.swp
+RELEASE-VERSION
+dist
+tmp
+pyamgcl.egg-info
+__pycache__
+/debug/
+.project
+.cproject
+.pydevproject
+.sync.ffs_db

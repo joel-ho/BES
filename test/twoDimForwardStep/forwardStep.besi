@@ -1,0 +1,45 @@
+//----------------------------------------------------------------------------//
+// Input file for forward step test case
+//----------------------------------------------------------------------------//
+
+MESH_FORMAT                     = GMSH                    // Required
+MESH_FILE                       = forwardStep.windows.msh // Required. Relative to current directory.
+
+OUTPUT_FORMAT                   = VTK
+OUTPUT_SLIP_WALL                = NO 
+OUTPUT_FOLDER                   = output  // Required. Relative to current directory.
+
+EQUATION                        = EULER_NON_DIMENSIONAL
+SOLVER_TYPE                     = EXPLICIT
+
+EXPLICIT_SCHEME                 = MULTI_STEP
+MULTI_TIME_STEP_OPTIONS         = 4, 0.0833, 0.2069, 0.4265, 1.0
+
+COURANT_NUM                     = 2
+ADAPTIVE_COURANT_NUM_MAX        = 30          // Ignored for explicit solver
+ADAPTIVE_COURANT_NUM_EXPONENT   = 1.1, 0.75   // Ignored for explicit solver
+LOCAL_TIME_STEP                 = NO
+
+NUMBER_OF_TIME_STEP             = 15000 // Required
+SAVE_INTERVAL                   = 500   // Required
+
+FREESTREAM_RAMP                 = 0
+FREESTREAM_RAMP_START_FRAC      = 0.5
+
+GRADIENT_SCHEME                 = GREEN_GAUSS
+LIMITER_SCHEME                  = VENKATAKRISHNAN
+VENKATAKRISHNAN_FACTOR          = 5.0
+
+FLUX_SCHEME                     = ROE
+HARTEN_CORRECTION_LIMIT         = 0.05
+
+GAS_CONSTANT                    = 287.0
+SPECIFIC_HEAT_RATIO             = 1.4
+
+FREESTREAM_MACH                 = 3,0 // Required. Format: u, v, w (if applicable)
+
+AMG_PRECOND_COARSENER           = AGGREGATION   // Ignored for explicit solver
+AMG_PRECOND_SMOOTHER            = DAMPED_JACOBI // Ignored for explicit solver
+LINEAR_SOLVER                   = GMRES         // Ignored for explicit solver
+LINEAR_SOLVER_MAX_ITER          = 200           // Ignored for explicit solver
+LINEAR_SOLVER_ABS_TOL           = 1E-6          // Ignored for explicit solver

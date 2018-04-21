@@ -1,0 +1,45 @@
+//----------------------------------------------------------------------------//
+// Input file for NACA0012 airfoil test case
+//----------------------------------------------------------------------------//
+
+MESH_FORMAT                     = GMSH                    // Required
+MESH_FILE                       = nacaAirfoil.windows.msh // Required. Relative to current directory.
+
+OUTPUT_FORMAT                   = VTK
+OUTPUT_SLIP_WALL                = YES
+OUTPUT_FOLDER                   = output  // Required. Relative to current directory.
+
+EQUATION                        = EULER_NON_DIMENSIONAL
+SOLVER_TYPE                     = IMPLICIT
+
+EXPLICIT_SCHEME                 = MULTI_STEP                      // Ignored in implicit solver
+MULTI_TIME_STEP_OPTIONS         = 4, 0.0833, 0.2069, 0.4265, 1.0  // Ignored in implicit solver
+
+COURANT_NUM                     = 1
+ADAPTIVE_COURANT_NUM_MAX        = 30
+ADAPTIVE_COURANT_NUM_EXPONENT   = 1.1, 0.75
+LOCAL_TIME_STEP                 = YES
+
+NUMBER_OF_TIME_STEP             = 500 // Required
+SAVE_INTERVAL                   = 100 // Required
+
+FREESTREAM_RAMP                 = 0
+FREESTREAM_RAMP_START_FRAC      = 0.5
+
+GRADIENT_SCHEME                 = GREEN_GAUSS
+LIMITER_SCHEME                  = VENKATAKRISHNAN
+VENKATAKRISHNAN_FACTOR          = 5.0
+
+FLUX_SCHEME                     = ROE
+HARTEN_CORRECTION_LIMIT         = 0.05
+
+GAS_CONSTANT                    = 287.0
+SPECIFIC_HEAT_RATIO             = 1.4
+
+FREESTREAM_MACH                 = 0.5,0 // Required. Format: u, v, w (if applicable)
+
+AMG_PRECOND_COARSENER           = AGGREGATION
+AMG_PRECOND_SMOOTHER            = DAMPED_JACOBI
+LINEAR_SOLVER                   = GMRES
+LINEAR_SOLVER_MAX_ITER          = 200
+LINEAR_SOLVER_ABS_TOL           = 1E-6

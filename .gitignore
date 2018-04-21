@@ -1,0 +1,15 @@
+*.exe
+*.out
+*.o
+*.csv
+*.vtk
+*.lnk
+*.pyc
+*.pos
+*.msh
+*.xlsx
+*.avi
+*.ftd
+bin/gmsh
+include/boost__1_66_0/
+_*
