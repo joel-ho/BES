@@ -2,7 +2,7 @@
 
 Basic Euler Solver, a lightweight, multi-threaded, three-dimensional unstructured finite volume code to solve the Euler equations. More information at the [project page](www.joelcfd.com/projects/bes).
 
-BES uses OpenMP, Eigen and AMGCL. It is released under version 3 of the GNU General Public License.
+BES uses [OpenMP](http://www.openmp.org/), [Eigen](http://eigen.tuxfamily.org/), [AMGCL](http://amgcl.readthedocs.io/en/latest/) and [Boost](https://www.boost.org/). It is released under version 3 of the GNU General Public License.
 
 ## Getting Started
 
@@ -15,6 +15,8 @@ If you want to compile, you just need to have the source file for Boost somewher
 You can download Boost [here](https://www.boost.org/users/history/). Boost v1.66.0 was used in the development of BES.
 
 MinGW-w64 v4.3.3 with gcc v7.2.0 was used in the development for windows.
+
+You might also need [Gmsh](http://gmsh.info/) for meshing the test cases and your own cases in future. The results can be viewed with [Paraview](https://www.paraview.org/).
 
 ### Installing
 
@@ -44,63 +46,46 @@ We are good to go! For Windows, we can compile in parallel with N threads by:
 mingw32-make -j N
 ```
 
-For Linux, it:
+For Linux:
 
 ```
 make -j N
 ```
 
+The binary will be created in the bin folder. You can add it to your path if you desire.
 
-## Running the tests
+## Running BES
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+We will go through an example with a two-dimensional NACA0012 test case. Starting from the BES folder, we navigate to the case folder:
 
 ```
-Give an example
+cd test\twoDimNacaAirfoil
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+The Gmsh .geo files are provided in the test cases. You will need to create the mesh youself, i.e.
 
 ```
-Give an example
+gmsh nacaAirfoil.geo -2
 ```
 
-## Deployment
+Then you can configure the case in the .besi file. For example, if you want to change the freestream Mach number, you can change the FREESTREAM_MACH option in nacaAirfoil.besi:
 
-Add additional notes about how to deploy this on a live system
+```
+FREESTREAM_MACH = 0.5,0.05
+```
 
-## Built With
+This will set the freestream Mach to be 0.5 in the x-direction and 0.05 in the y-direction. Also, ensure that the mesh file is correctly named in the MESH_FILE option. The results will be written in the folder named in the OUTPUT_FOLDER option. The folder must be created before running the case or else BES will not output the results. Remember to save, and we can run BES now. We give our input file as the one and only argument to the program:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+BES nacaAirfoil.besi
+```
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Now sit back and relax! Once done, you can view the results in the output foldder with Paraview or any other viewer that can open .vtk files.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Ho Mun Onn, Joel** - [JoelCFD](https://www.joelcfd.com/about)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+This project is licensed under version 3 of the GNU General Public License - see the [LICENSE](LICENSE) file for details
