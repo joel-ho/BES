@@ -5,12 +5,12 @@ OS = WINDOWS
 CC = g++
 
 # Compiler standard
-#		Windows:  g++ doesn't compile with c++11, might be a problem with the compiler
+#		Windows: issues with c++11 on 32 bit g++, used gnu++11 instead
 #		Linux: g++ compiles with c++11
 # You can play around with this if problems occur (i.e. gnu+11 not supported 
 # on your windows compiler etc.)
 ifeq ($(OS),WINDOWS)
-	CSTD = gnu++11
+	CSTD = c++11
 else
 	CSTD = c++11
 endif
