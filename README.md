@@ -88,4 +88,4 @@ Now sit back and relax! Once done, you can view the results in the output folder
 
 ## License
 
-This project is licensed under version 3 of the GNU General Public License - see the [LICENSE](LICENSE) file for details
+This project is licensed under version 3 of the GNU General Public License - see the [LICENSE](LICENSE) file for details.
