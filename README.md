@@ -1,21 +1,20 @@
 # BES
 
-Basic Euler Solver, a lightweight, multi-threaded, three-dimensional unstructured finite volume code to solve the Euler equations. 
+Basic Euler Solver, a lightweight, multi-threaded, three-dimensional unstructured finite volume code to solve the Euler equations. More information at the [project page](www.joelcfd.com/projects/bes).
 
 BES uses OpenMP, Eigen and AMGCL. It is released under version 3 of the GNU General Public License.
 
 ## Getting Started
 
-Before deciding to compile the code, you can check out the binaries for <a href="https://drive.google.com/file/d/1NRtUkby0Tfmqq1eHPAVDsC-AbSJu2N-I/view?usp=sharing" target="_blank">Windows 64bit</a> or <a href="LINK" target="_blank">Linux 64bit</a>
+Before deciding to compile the code, you can check out the binaries for [Windows 64 bit](https://drive.google.com/file/d/18ypL0WMQS3lU-KcvVytyWhVVcTkJy6Wc/view?usp=sharing) or [Linux 64 bit]().
 
 If you want to compile, you just need to have the source file for Boost somewhere on your machine. Some header-only libraries from Boost is used in AMGCL, hence the dependency. The required Eigen and AMGCL libraries are provided in BES include directory, so no action is needed for that.
 
 ### Prerequisites
 
-You can download Boost <a href="https://www.boost.org/users/history/" target="_blank">here</a>. Boost v1.66.0 was used in the development of BES.
+You can download Boost [here](https://www.boost.org/users/history/). Boost v1.66.0 was used in the development of BES.
 
 MinGW-w64 v4.3.3 with gcc v7.2.0 was used in the development for windows.
-
 
 ### Installing
 
@@ -38,6 +37,19 @@ Second, enter the path to Boost in your machine in line 36 of the makefile:
 ```
 BOOST = path/to/boost
 ```
+
+We are good to go! For Windows, we can compile in parallel with N threads by:
+
+```
+mingw32-make -j N
+```
+
+For Linux, it:
+
+```
+make -j N
+```
+
 
 ## Running the tests
 
