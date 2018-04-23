@@ -2,8 +2,8 @@
 // Input file for Onera M6 wing test case
 //----------------------------------------------------------------------------//
 
-MESH_FORMAT                     = GMSH                // Required
-MESH_FILE                       = oneraM6.windows.msh // Required. Relative to current directory.
+MESH_FORMAT                     = GMSH        // Required
+MESH_FILE                       = oneraM6.msh // Required. Relative to current directory.
 
 OUTPUT_FORMAT                   = VTK
 OUTPUT_SLIP_WALL                = YES

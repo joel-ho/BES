@@ -16,7 +16,7 @@
   along with BES.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define BES_VERSION 0.01
+#define BES_VERSION 0.1
 
 #include <iostream>
 #include <fstream>

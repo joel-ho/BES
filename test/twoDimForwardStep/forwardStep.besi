@@ -2,8 +2,8 @@
 // Input file for forward step test case
 //----------------------------------------------------------------------------//
 
-MESH_FORMAT                     = GMSH                    // Required
-MESH_FILE                       = forwardStep.windows.msh // Required. Relative to current directory.
+MESH_FORMAT                     = GMSH            // Required
+MESH_FILE                       = forwardStep.msh // Required. Relative to current directory.
 
 OUTPUT_FORMAT                   = VTK
 OUTPUT_SLIP_WALL                = NO 

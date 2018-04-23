@@ -2,8 +2,8 @@
 // Input file for NACA0012 airfoil test case
 //----------------------------------------------------------------------------//
 
-MESH_FORMAT                     = GMSH                    // Required
-MESH_FILE                       = nacaAirfoil.windows.msh // Required. Relative to current directory.
+MESH_FORMAT                     = GMSH            // Required
+MESH_FILE                       = nacaAirfoil.msh // Required. Relative to current directory.
 
 OUTPUT_FORMAT                   = VTK
 OUTPUT_SLIP_WALL                = YES
