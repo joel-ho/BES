@@ -44,7 +44,7 @@ CFLAG = -w -std=$(CSTD) $(OFLAG) $(OMPFLAG) $(STATICFLAG) -I$(EIGEN) -I$(BOOST) 
 ifeq ($(OS),WINDOWS)
 	LINK_TARGET = $(BINDIR)/BES.exe
 else
-	LINK_TARGET = $(BINDIR)/BES.out
+	LINK_TARGET = $(BINDIR)/BES
 endif
 OBJS = $(BUILDDIR)/BES.o \
 	$(BUILDDIR)/Options.o \
@@ -88,5 +88,5 @@ else
 clean:
 	rm -rf $(BUILDDIR)/*.o
 	rm -rf $(BINDIR)/BES.exe
-	rm -rf $(BINDIR)/BES.out
+	rm -rf $(BINDIR)/BES
 endif 

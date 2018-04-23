@@ -6,7 +6,7 @@ BES uses [OpenMP](http://www.openmp.org/), [Eigen](http://eigen.tuxfamily.org/),
 
 ## Getting Started
 
-Before deciding to compile the code, you can check out the binaries for [Windows 64 bit](https://drive.google.com/file/d/18ypL0WMQS3lU-KcvVytyWhVVcTkJy6Wc/view?usp=sharing) or [Linux 64 bit]().
+Before deciding to compile the code, you can check out the binaries for [Windows 64 bit](https://drive.google.com/file/d/18ypL0WMQS3lU-KcvVytyWhVVcTkJy6Wc/view?usp=sharing) or [Linux 64 bit](https://drive.google.com/file/d/1cmdQnNyyrQQPWLGCsQL1eveQEHHVDi9V/view?usp=sharing).
 
 If you want to compile, you just need to have the source file for Boost somewhere on your machine. Some header-only libraries from Boost is used in AMGCL, hence the dependency. The required Eigen and AMGCL libraries are provided in BES include directory, so no action is needed for that.
 
@@ -14,7 +14,7 @@ If you want to compile, you just need to have the source file for Boost somewher
 
 You can download Boost [here](https://www.boost.org/users/history/). Boost v1.66.0 was used in the development of BES.
 
-MinGW-w64 v4.3.3 with gcc v7.2.0 was used in the development for windows.
+MinGW-w64 v4.3.3 with gcc v7.2.0 was used in the development for windows. For Linux, Ubuntu v16.04 LTS was used with g++ v5.4.0. 
 
 You might also need [Gmsh](http://gmsh.info/) for meshing the test cases and your own cases in future. The results can be viewed with [Paraview](https://www.paraview.org/).
 
